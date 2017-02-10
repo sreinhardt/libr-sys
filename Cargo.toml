@@ -1,9 +1,18 @@
 [package]
+# default
 name = "libr-sys"
 version = "0.1.0"
-authors = ["Spenser Reinhardt <spenser.reinhardt@honeyapps.net>"]
+authors = ["sreinhardt <spenser.reinhardt@honeyapps.net>"]
+# build info
 build = "build.rs"
 links = "r"
+# crates.io
+description = "Bindings for Radare2's libr libraries."
+readme = "Readme.md"
+repository = "https://github.com/sreinhardt/libr-sys"
+keywords = ["radare2", "libr", "r2", "debugger", "editor", "hex", ]
+categories = ["development-tools::debugging", "command-line-interface", "command-line-utilities", "external-ffi-bindings", "os"]
+exclude = ["src/bindings.rs", ".travis.yml"]
 
 [dependencies]
 

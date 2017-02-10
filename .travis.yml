@@ -1,0 +1,26 @@
+os:
+  - osx
+  - linux
+
+rust:
+  - stable
+  - beta
+  - nightly
+
+sudo: false
+
+matrix:
+  allow_failures:
+    - rust: nightly
+
+apt:
+    packages:
+    - radare2
+    - libradare2-0.9.6
+    - libradare2-dev
+    - libradare2-common
+    - libradare2-0.9.6-dbg
+
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; brew update; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; brew install radare2; fi
