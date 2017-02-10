@@ -32,8 +32,8 @@ apt:
     - python-gobject-dev
 
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; brew update; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; brew install radare2; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; git clone https://github.com/radare/radare2.git; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; cd radare2; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; ./sys/install.sh; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install radare2; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then git clone https://github.com/radare/radare2.git; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cd radare2; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./sys/install.sh; fi
