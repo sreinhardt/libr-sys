@@ -1,3 +1,6 @@
+language: rust
+sudo: false
+
 os:
   - osx
   - linux
@@ -7,20 +10,30 @@ rust:
   - beta
   - nightly
 
-sudo: false
-
 matrix:
   allow_failures:
     - rust: nightly
 
 apt:
     packages:
-    - radare2
-    - libradare2-0.9.6
-    - libradare2-dev
-    - libradare2-common
-    - libradare2-0.9.6-dbg
+    - git
+    - gcc
+    - g++
+    - glib-2.0
+    - make
+    - cmake
+    - pkg-config
+    - software-properties-common
+    - wget
+    - swig
+    - flex
+    - bison
+    - python-all-dev
+    - python-gobject-dev
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; brew update; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; brew install radare2; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; git clone https://github.com/radare/radare2.git; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; cd radare2; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; ./sys/install.sh; fi
