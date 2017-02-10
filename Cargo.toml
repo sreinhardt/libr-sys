@@ -12,10 +12,13 @@ readme = "Readme.md"
 repository = "https://github.com/sreinhardt/libr-sys"
 keywords = ["radare2", "libr", "r2", "debugger", "editor", "hex", ]
 categories = ["development-tools::debugging", "command-line-interface", "command-line-utilities", "external-ffi-bindings", "os"]
-exclude = ["src/bindings.rs", ".travis.yml"]
+exclude = ["src/bindings.rs", ".travis.yml", ".gitignore"]
 
 [dependencies]
 
 [build-dependencies]
 pkg-config = "0.3"
 bindgen = "0.20"
+
+[badges]
+travis-ci = { repository = "sreinhardt/libr-sys", branch = "master" }
