@@ -1,0 +1,12 @@
+[package]
+name = "libr-sys"
+version = "0.1.0"
+authors = ["Spenser Reinhardt <spenser.reinhardt@honeyapps.net>"]
+build = "build.rs"
+links = "r"
+
+[dependencies]
+
+[build-dependencies]
+pkg-config = "0.3"
+bindgen = "0.20"
